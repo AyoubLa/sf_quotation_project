@@ -1,0 +1,241 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'blog_post_show' %}
+
+{% block header %}
+    <!-- header begin -->
+    <header>
+        <div class="info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="col"><span class="id-color"><i class="fa fa-map-marker"></i></span>Collins Street West, Victoria 8007 Australia </div>
+                        <div class="col"><span class="id-color"><i class="fa fa-clock-o"></i></span>Monday - Friday 08:00-16:00</div>
+                        <div class="col"><span class="id-color"><i class="fa fa-phone"></i></span>1800.899.900</div>
+                        <div class="col">
+                            <div id="lang-selector" class="dropdown">
+                                <a href="#" class="btn-selector">English</a>
+                                <ul>
+                                    <li class="active"><a href="#">English</a></li>
+                                    <li><a href="#">France</a></li>
+                                    <li><a href="#">Germany</a></li>
+                                    <li><a href="#">Spain</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <!-- social icons -->
+                        <div class="col social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-rss"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-envelope-o"></i></a>
+                        </div>
+                        <!-- social icons close -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- logo begin -->
+                    <div id="logo">
+                        <a href="index.html">
+                            <img class="logo" src="/images/logo.png" alt="">
+                            <img class="logo-2" src="/images/logo-2.png" alt="">
+                        </a>
+                    </div>
+                    <!-- logo close -->
+
+                    <!-- small button begin -->
+                    <span id="menu-btn"></span>
+                    <!-- small button close -->
+
+                    <!-- mainmenu begin -->
+                    <nav>
+                        <ul id="mainmenu">
+                            <li><a href="{{ path('home_index') }}">Home</a></li>
+                            <li><a href="{{ path('blog_index') }}">Blog</a></li>
+                            <li><a href="#">About Us</a>
+                            </li>
+                            <li><a href="#">Qotation</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <!-- mainmenu close -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header close -->
+{% endblock %}
+
+{% block subheader %}
+    <!-- subheader -->
+    <section id="subheader" data-stellar-background-ratio=".3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Blog</h1>
+                    <div class="small-border-deco"><span></span></div>
+                    <ul class="crumb">
+                        <li><a href="{{ path('home_index') }}">Home</a></li>
+                        <li class="sep"></li>
+                        <li><a href="{{ path('blog_index') }}">Blog</a></li>
+                        <li class="sep"></li>
+                        <li>{{ post.title }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- subheader close -->
+{% endblock %}
+
+{% block main %}
+    <!-- content begin -->
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <ul class="blog-list">
+                        <li>
+                            <div class="post-content">
+                                <div class="post-image">
+                                    <img src="/images/blog/pic-blog-1.jpg" alt="" />
+                                </div>
+
+
+                                <div class="date-box">
+                                    {% set day = post.publishedAt|localizeddate('long', 'medium', null, 'UTC')|split(' ', 3) %}
+                                    <div class="day">{{ day[0] }}</div>
+                                    <div class="month">{{ day[1] |upper|slice(0,3) }}</div>
+                                </div>
+
+                                <div class="post-text">
+                                    <h3>
+                                        <a href="{{ path('blog_post', {slug: post.slug}) }}">
+                                            {{ post.title }}
+                                        </a>
+                                    </h3>
+                                    <p>{{ post.content|md2html }}</p>
+                                </div>
+
+                                <a href="{{ path('blog_post', {slug: post.slug}) }}" class="btn-more">Read More</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="sidebar" class="col-md-3">
+                    <div class="widget widget-post">
+                        <h4>Recent Posts</h4>
+                        <div class="small-border"></div>
+                        <ul>
+                            <li><span class="post-date">22 Jun</span><a href="#">5 Things That Take a Room from Good to Great</a></li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <div class="padding30 text-black" data-bgimage="url(images/background/banner-1.jpg)">
+                            <h4>Attention!</h4>
+                            Looking for best partner for your next construction works? Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+                            <div class="text-center">
+                                <a href="contact.html" class="btn btn-line-black btn-fx mt20">Hire Us Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget widget-text">
+                        <h4>About Us</h4>
+                        <div class="small-border"></div>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                    </div>
+                    <div class="widget widget_tags">
+                        <h4>Tags</h4>
+                        <div class="small-border"></div>
+                        <ul>
+                            <li><a href="#link">Art</a></li>
+                            <li><a href="#link">Application</a></li>
+                            <li><a href="#link">Design</a></li>
+                            <li><a href="#link">Entertainment</a></li>
+                            <li><a href="#link">Internet</a></li>
+                            <li><a href="#link">Marketing</a></li>
+                            <li><a href="#link">Multipurpose</a></li>
+                            <li><a href="#link">Music</a></li>
+                            <li><a href="#link">Print</a></li>
+                            <li><a href="#link">Programming</a></li>
+                            <li><a href="#link">Responsive</a></li>
+                            <li><a href="#link">Website</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <!-- footer begin -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/images/logo.png" class="logo-small" alt=""><br>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="widget widget_recent_post">
+                        <h3>Latest News</h3>
+                        <ul>
+                            <li><a href="#">5 Things That Take a Room from Good to Great</a></li>
+                            <li><a href="#">Functional and Stylish Wall-to-Wall Shelves</a></li>
+                            <li><a href="#">9 Unique and Unusual Ways to Display Your TV</a></li>
+                            <li><a href="#">The 5 Secrets to Pulling Off Simple, Minimal Design</a></li>
+                            <li><a href="#">How to Make a Huge Impact With Multiples</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <h3>Contact Us</h3>
+                    <div class="widget widget-address">
+                        <address>
+                            <span>Collins Street West, Victoria 8007 Australia</span>
+                            <span><strong>Phone:</strong>(208) 333 9296</span>
+                            <span><strong>Fax:</strong>(208) 333 9298</span>
+                            <span><strong>Email:</strong><a href="mailto:contact@buildpro.com">contact@buildpro.com</a></span>
+                            <span><strong>Web:</strong><a href="#">http://buildpro-construction.com</a></span>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        &copy; Copyright 2016 - BuildPro by Designesia
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-rss fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-skype fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- footer close -->
+{% endblock %}

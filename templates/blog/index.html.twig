@@ -1,0 +1,136 @@
+{% extends 'base.html.twig' %}
+
+{% block body_class 'page-blog' %}
+
+
+{% block header %}
+
+    {% include 'includes/header.html.twig' %}
+
+{% endblock %}
+
+
+
+{% block subheader %}
+<!-- subheader -->
+    <section id="subheader" data-stellar-background-ratio=".3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Blog</h1>
+                <div class="small-border-deco"><span></span></div>
+                <ul class="crumb">
+                    <li><a href="{{ path('home_index') }}">Home</a></li>
+                    <li class="sep"></li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- subheader close -->
+{% endblock %}
+
+{% block main %}
+
+<!-- content begin -->
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <ul class="blog-list">
+                        {% for post in posts %}
+                        <li>
+                            <div class="post-content">
+                                <div class="post-image">
+                                    <img src="/images/blog/pic-blog-1.jpg" alt="" />
+                                </div>
+
+
+                                <div class="date-box">
+                                    {% set day = post.publishedAt|localizeddate('long', 'medium', null, 'UTC')|split(' ', 3) %}
+                                    <div class="day">{{ day[0] }}</div>
+                                    <div class="month">{{ day[1] |upper|slice(0,3) }}</div>
+                                </div>
+
+                                <div class="post-text">
+                                    <h3>
+                                        <a href="{{ path('blog_post', {slug: post.slug}) }}">
+                                            {{ post.title }}
+                                        </a>
+                                    </h3>
+                                    <p>{{ post.summary }}</p>
+                                </div>
+
+                                <a href="{{ path('blog_post', {slug: post.slug}) }}" class="btn-more">Read More</a>
+                            </div>
+                        </li>
+
+                        {% else %}
+                            <div class="well">{{ 'post.no_posts_found'|trans }}</div>
+                        {% endfor %}
+                    </ul>
+                    {% if posts.haveToPaginate %}
+                    <div class="text-center">
+                            {{ pagerfanta(posts, 'twitter_bootstrap3_translated', {routeName: 'blog_index_paginated', routeParams: app.request.query.all}) }}
+                    </div>
+                    {% endif %}
+
+
+                </div>
+                <div id="sidebar" class="col-md-3">
+                    <div class="widget widget-post">
+                        <h4>Recent Posts</h4>
+                        <div class="small-border"></div>
+                        <ul>
+                            <li><span class="post-date">22 Jun</span><a href="#">5 Things That Take a Room from Good to Great</a></li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <div class="padding30 text-black" data-bgimage="url(images/background/banner-1.jpg)">
+                            <h4>Attention!</h4>
+                            Looking for best partner for your next construction works? Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+                            <div class="text-center">
+                                <a href="#" class="btn btn-line-black btn-fx mt20">Hire Us Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget widget-text">
+                        <h4>About Us</h4>
+                        <div class="small-border"></div>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                    </div>
+                    <div class="widget widget_tags">
+                        <h4>Tags</h4>
+                        <div class="small-border"></div>
+                        <ul>
+                            <li><a href="#link">Art</a></li>
+                            <li><a href="#link">Application</a></li>
+                            <li><a href="#link">Design</a></li>
+                            <li><a href="#link">Entertainment</a></li>
+                            <li><a href="#link">Internet</a></li>
+                            <li><a href="#link">Marketing</a></li>
+                            <li><a href="#link">Multipurpose</a></li>
+                            <li><a href="#link">Music</a></li>
+                            <li><a href="#link">Print</a></li>
+                            <li><a href="#link">Programming</a></li>
+                            <li><a href="#link">Responsive</a></li>
+                            <li><a href="#link">Website</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+
+    {% include 'includes/footer.html.twig' %}
+
+{% endblock %}       
+
+

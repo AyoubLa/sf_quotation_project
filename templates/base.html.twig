@@ -1,0 +1,138 @@
+{#
+   This is the base template used as the application layout which contains the
+   common elements and decorates all the other templates.
+   See https://symfony.com/doc/current/book/templating.html#template-inheritance-and-layouts
+#}
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Symfony Demo application{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BuildPro is the most complete constructon and building website template">
+    <meta name="keywords" content="construction,multipurpose,onepage,responsive,minimal,bootstrap,theme">
+    <meta name="author" content="">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- CSS Files
+    ================================================== -->
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/css/animate.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- custom background -->
+    <link rel="stylesheet" href="/css/bg.css" type="text/css">
+
+    <!-- color scheme -->
+    <link rel="stylesheet" href="/css/color.css" type="text/css" id="colors">
+
+    <!-- RS5.0 Main Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/revolution/css/settings.css">
+
+    <!-- RS5.0 Layers and Navigation Styles -->
+    <link rel="stylesheet" type="text/css" href="/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/revolution/css/navigation.css">
+
+    <link rel="icon" type="/image/x-icon" href="" />
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+    <div id="wrapper">
+
+        {% block header %}
+        {% endblock %}
+
+        {% block subheader %}
+        {% endblock %}
+
+        {% block main %}
+        {% endblock %}
+
+        {% block footer %}
+        {% endblock %}
+
+        <a href="#" id="back-to-top"></a>
+        <div id="preloader">
+            <div class="preloader1"></div>
+        </div>
+
+        {# it's not mandatory to set the timezone in localizeddate(). This is done to
+           avoid errors when the 'intl' PHP extension is not available and the application
+           is forced to use the limited "intl polyfill", which only supports UTC and GMT #}
+        <!-- Page rendered on {{ 'now'|localizeddate('long', 'long', null, 'UTC') }} -->
+
+
+    </div>  
+
+<!-- Javascript Files
+
+    ================================================== -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/easing.js"></script>
+    <script src="/js/owl.carousel.js"></script>
+    <script src="/js/jquery.countTo.js"></script>
+    <script src="/js/validation.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/enquire.min.js"></script>
+    <script src="/js/jquery.stellar.min.js"></script>
+    <script src="/js/designesia.js"></script>
+
+    <!-- RS5.0 Core JS Files -->
+    <script type="text/javascript" src="/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+
+    <!-- RS5.0 Extensions Files -->
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+
+    <!-- RS5.0 Core JS Files -->
+    <script type="text/javascript" src="/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+
+    <!-- RS5.0 Extensions Files -->
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery("#revolution-slider").revolution({
+                sliderType: "standard",
+                sliderLayout: "fullwidth",
+                delay: 3500,
+                navigation: {
+                    arrows: { enable: true }
+                },
+                parallax: {
+                    type: "mouse",
+                    origo: "slidercenter",
+                    speed: 2000,
+                    levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],
+                },
+                spinner: "off",
+                gridwidth: 1140,
+                gridheight: 510,
+                disableProgressBar: "on"
+            });
+        });
+    </script>
+</body>
+</html>
