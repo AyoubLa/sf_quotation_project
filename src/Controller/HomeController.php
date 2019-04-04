@@ -1,12 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: SQLI
- * Date: 01/04/2019
- * Time: 11:29
- */
 
 namespace App\Controller;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
