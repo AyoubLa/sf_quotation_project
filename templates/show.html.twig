@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body_class 'page-blog' %}
+
+
+{% block header %}
+
+  {% include 'includes/header.html.twig' %}
+
+{% endblock %}
+
+{% block main %}
+  <!-- content begin -->
+  <p>les quotations</p>
+  {% for quotation in quotations %}
+  <p>{{ quotation.getLname }}</p>
+  <p>{{ quotation.getFname }}</p>
+  {% endfor %}
+  <!-- content close -->
+{% endblock %}
+
+{% block footer %}
+
+  {% include 'includes/footer.html.twig' %}
+
+{% endblock %}

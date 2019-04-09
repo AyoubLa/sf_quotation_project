@@ -12,854 +12,849 @@
 {% block main %}
     <!-- content begin -->
     <div class="QuoteForm-section wrapper">
-		<div class="display-table">
-			<div class="display-table-cell">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="form-wrap clearfix">
-								<h2 class="form-title">Quotation Booking - Multi Step Quotation Booking Request PHP Form For Cleaning Service</h2>
-								<div class="intro-text text-center">
-									Please fill the form with all Property Information you need to clean and Submit. We will Contact You within 24 hours.
-								</div><!-- end intro-text -->
-								<div class="col-md-8 col-sm-12">
-									<form id="QuoteForm" name="QuoteForm" data-toggle="validator" class="QuoteForm"  enctype="multipart/form-data">
-										<div class="section-wrap">
-											
-											<div id="section-1" class="section">
-												<fieldset>
-													<h3 class="section-title">Step 1 of 5</h3>
-													<div class="form-layer-steps form-layer-tolal-steps-5">
-														<div class="form-layer-progress">
-															<div class="form-layer-progress-line" style="width: 0%;"></div>
-														</div>
-														<!-- Step 1 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon activestep"><i class="fa fa-home"></i></div>
-															<p>Property Info</p>
-														</div>
-														<!-- Step 1 -->
-														
-														<!-- Step 2 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon"><i class="fa fa-paint-brush"></i></div>
-															<p>Required Cleaning</p>
-														</div>
-														<!-- Step 2 -->
-														
-														<!-- Step 3 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon"><i class="fa fa-clock-o"></i></div>
-															<p>Schedule</p>
-														</div>
-														<!-- Step 3 -->
-														
-														<!-- Step 4 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon"><i class="fa fa-address-card"></i></div>
-															<p>Booking Info</p>
-														</div>
-														<!-- Step 4 -->
-														
-														<!-- Step 5 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon"><i class="fa fa-check"></i></div>
-															<p>Confirm</p>
-														</div>
-														<!-- Step 5 -->
-													</div>
-													
-													<div class="help-block with-errors mandatory-error"></div>
-													
-													<h4>Select Property Type<span class="mandatory">*</span>:</h4>
-													<div class="form-group validservicetype">
-														<ul class="mgs-radio mgsimagetyperadio list-unstyled">
-															<li><input type="radio" name="servicetype" id="servicetype1" value="Residential" />
-																<label for="servicetype1"><img src="/images/home.png" alt="Residential" /> Residential</label>
-															</li>
-															<li><input type="radio" name="servicetype" id="servicetype2" value="Commercial" />
-																<label for="servicetype2"><img src="/images/commercial.png" alt="Commercial" /> Commercial</label>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Select Cleaning Type<span class="mandatory">*</span>:</h4>
-													<div class="form-group validcleaningtype">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="cleaningtype" id="cleaningtype1" value="Shifting Cleaning" required data-error="Please Select Cleaning Type" />
-																<label for="cleaningtype1">Shifting Cleaning</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="cleaningtype" id="cleaningtype2" value="Seasonal Cleaning" required data-error="Please Select Cleaning Type" />
-																<label for="cleaningtype2">Seasonal Cleaning</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Property Address<span class="mandatory">*</span>:</h4>
-													<div class="form-group validpropertyaddress">
-														<input class="form-control" name="propertyaddress" id="propertyaddress" type="text" placeholder="Property Address*" required data-error="Please enter Property address">
-														<div class="input-group-icon"><i class="fa fa-map-marker"></i></div>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<div class="form-group quoteForm-step-1">
-														<button class="btn btn-default disable" type="button">Are You ready!</button>
-														<button class="btn btn-custom pull-right" onclick="nextStep2()" type="button">Next <span class="fa fa-arrow-right"></span></button> 
-													</div><!-- end form-group -->
-													
-												</fieldset>
-											</div><!-- end section -->
+        <div class="display-table">
+            <div class="display-table-cell">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-wrap clearfix">
+                                <h2 class="form-title">Quotation Booking - Multi Step Quotation Booking Request PHP Form For Cleaning Service</h2>
+                                <div class="intro-text text-center">
+                                    Please fill the form with all Property Information you need to clean and Submit. We will Contact You within 24 hours.
+                                </div><!-- end intro-text -->
+                                <div class="col-md-8 col-sm-12">
+                                    {{ form_start(form, {'attr': {'id': 'QuoteForm', 'name': 'QuoteForm', 'data_toggle': 'validation', 'class': 'QuoteForm', 'encrypt': 'multipart/form-data', 'action': 'az'}}) }}
+                                        <div class="section-wrap">
 
-											<div id="section-2" class="section slide-right">
-												<fieldset>
-													<h3 class="section-title">Step 2 of 5</h3>
-													<div class="form-layer-steps form-layer-tolal-steps-5">
-														<div class="form-layer-progress">
-															<div class="form-layer-progress-line" style="width: 30%;"></div>
-														</div>
-														<!-- Step 1 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon"><i class="fa fa-home"></i></div>
-															<p>Property Info</p>
-														</div>
-														<!-- Step 1 -->
-														
-														<!-- Step 2 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon activestep"><i class="fa fa-paint-brush"></i></div>
-															<p>Required Cleaning</p>
-														</div>
-														<!-- Step 2 -->
-														
-														<!-- Step 3 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon"><i class="fa fa-clock-o"></i></div>
-															<p>Schedule</p>
-														</div>
-														<!-- Step 3 -->
-														
-														<!-- Step 4 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon"><i class="fa fa-address-card"></i></div>
-															<p>Booking Info</p>
-														</div>
-														<!-- Step 4 -->
-														
-														<!-- Step 5 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon"><i class="fa fa-check"></i></div>
-															<p>Confirm</p>
-														</div>
-														<!-- Step 5 -->
-													</div>
-													
-													<h4>ProPerty Size (sq. ft.)<span class="mandatory">*</span>:</h4>
-													<div class="form-group validpropertysize">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="propertysize" id="propertysize1" value="0-1000" required data-error="Please Select ProPerty Size" />
-																<label for="propertysize1">0-1000</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="propertysize" id="propertysize2" value="1001 - 1500" required data-error="Please Select ProPerty Size" />
-																<label for="propertysize2">1001 - 1500</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="propertysize" id="propertysize3" value="1501 - 2000" required data-error="Please Select ProPerty Size" />
-																<label for="propertysize3">1501 - 2000</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="propertysize" id="propertysize4" value="2001 - 2500" required data-error="Please Select ProPerty Size" />
-																<label for="propertysize4">2001 - 2500</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="propertysize" id="propertysize5" value="2501 - 3000" required data-error="Please Select ProPerty Size" />
-																<label for="propertysize5">2501 - 3000</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="propertysize" id="propertysize6" value="3000+" required data-error="Please Select ProPerty Size" />
-																<label for="propertysize6">3000+</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Bedrooms<span class="mandatory">*</span>:</h4>
-													<div class="form-group validbedrooms">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="bedrooms" id="bedrooms1" value="1" />
-																<label for="bedrooms1">1</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bedrooms" id="bedrooms2" value="2" />
-																<label for="bedrooms2">2</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bedrooms" id="bedrooms3" value="3" />
-																<label for="bedrooms3">3</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bedrooms" id="bedrooms4" value="4" />
-																<label for="bedrooms4">4</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bedrooms" id="bedrooms5" value="5" />
-																<label for="bedrooms5">5</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bedrooms" id="bedrooms6" value="5+" />
-																<label for="bedrooms6">5+</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Bathrooms<span class="mandatory">*</span>:</h4>
-													<div class="form-group validbathrooms">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="bathrooms" id="bathrooms1" value="1" />
-																<label for="bathrooms1">1</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bathrooms" id="bathrooms2" value="2" />
-																<label for="bathrooms2">2</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bathrooms" id="bathrooms3" value="3" />
-																<label for="bathrooms3">3</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bathrooms" id="bathrooms4" value="4" />
-																<label for="bathrooms4">4</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bathrooms" id="bathrooms5" value="5" />
-																<label for="bathrooms5">5</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bathrooms" id="bathrooms6" value="5+" />
-																<label for="bathrooms6">5+</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Bath Tubs<span class="mandatory">*</span>:</h4>
-													<div class="form-group validbathtubs">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="bathtubs" id="bathtubs1" value="Null" />
-																<label for="bathtubs1">Null</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bathtubs" id="bathtubs2" value="1" />
-																<label for="bathtubs2">1</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bathtubs" id="bathtubs3" value="2" />
-																<label for="bathtubs3">2</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bathtubs" id="bathtubs4" value="3" />
-																<label for="bathtubs4">3</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bathtubs" id="bathtubs5" value="4" />
-																<label for="bathtubs5">4</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="bathtubs" id="bathtubs6" value="5" />
-																<label for="bathtubs6">5</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Sitting/Conference Room<span class="mandatory">*</span>:</h4>
-													<div class="form-group validsittingroom">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="sittingroom" id="sittingroom1" value="Yes">
-																<label for="sittingroom1">Yes</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="sittingroom" id="sittingroom2" value="No">
-																<label for="sittingroom2">No</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Dining Room<span class="mandatory">*</span>:</h4>
-													<div class="form-group validdiningroom">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="diningroom" id="diningroom1" value="Yes">
-																<label for="diningroom1">Yes</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="diningroom" id="diningroom2" value="No">
-																<label for="diningroom2">No</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Kitchen<span class="mandatory">*</span>:</h4>
-													<div class="form-group validkitchen">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="kitchen" id="kitchen1" value="Null" required data-error="Please Select Kitchen">
-																<label for="kitchen1">Null</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="kitchen" id="kitchen2" value="1" required data-error="Please Select Kitchen">
-																<label for="kitchen2">1</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="kitchen" id="kitchen3" value="2" required data-error="Please Select Kitchen">
-																<label for="kitchen3">2</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Oven<span class="mandatory">*</span>:</h4>
-													<div class="form-group validoven">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="oven" id="oven1" value="Null" />
-																<label for="oven1">Null</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="oven" id="oven2" value="1" />
-																<label for="oven2">1</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="oven" id="oven3" value="2" />
-																<label for="oven3">2</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="oven" id="oven4" value="3" />
-																<label for="oven4">3</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="oven" id="oven5" value="4" />
-																<label for="oven5">4</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Kitchen Items<span class="mandatory">*</span>:</h4>
-													<div class="form-group validkitchenitems">
-														<ul class="mgsstyle-checkbox mgscheckbox-style list-unstyled">
-															<li><input type="checkbox" name="kitchenitems[]" id="kitchenitems1" value="Not Required" /><label for="kitchenitems1">Not Required</label></li>
-															<li><input type="checkbox" name="kitchenitems[]" id="kitchenitems2" value="Refrigerator" /><label for="kitchenitems2">Refrigerator</label></li>
-															<li><input type="checkbox" name="kitchenitems[]" id="kitchenitems3" value="Washing Machine" /><label for="kitchenitems3">Washing Machine</label></li>
-															<li><input type="checkbox" name="kitchenitems[]" id="kitchenitems4" value="Microwave" /><label for="kitchenitems4">Microwave</label></li>
-															<li><input type="checkbox" name="kitchenitems[]" id="kitchenitems5" value="Tumble Dryer" /><label for="kitchenitems5">Tumble Dryer</label></li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													
-													<div class="form-group quoteForm-step-2">
-														<button class="btn btn-custom" type="button" onclick="previousStep1()"><span class="fa fa-arrow-left"></span> Back</button> 
-														<button class="btn btn-custom pull-right" type="button" onclick="nextStep3()">Next <span class="fa fa-arrow-right"></span></button> 
-													</div><!-- end form-group -->
-													
-												</fieldset>
-											</div><!-- end section -->
+                                            <div id="section-1" class="section">
+                                                <fieldset>
+                                                    <h3 class="section-title">Step 1 of 5</h3>
+                                                    <div class="form-layer-steps form-layer-tolal-steps-5">
+                                                        <div class="form-layer-progress">
+                                                            <div class="form-layer-progress-line" style="width: 0%;"></div>
+                                                        </div>
+                                                        <!-- Step 1 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon activestep"><i class="fa fa-home"></i></div>
+                                                            <p>Property Info</p>
+                                                        </div>
+                                                        <!-- Step 1 -->
 
-											<div id="section-3" class="section slide-right">
-												<fieldset>
-													<h3 class="section-title">Step 3 of 5</h3>
-													<div class="form-layer-steps form-layer-tolal-steps-5">
-														<div class="form-layer-progress">
-															<div class="form-layer-progress-line" style="width: 50%;"></div>
-														</div>
-														<!-- Step 1 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon"><i class="fa fa-home"></i></div>
-															<p>Property Info</p>
-														</div>
-														<!-- Step 1 -->
-														
-														<!-- Step 2 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon"><i class="fa fa-paint-brush"></i></div>
-															<p>Required Cleaning</p>
-														</div>
-														<!-- Step 2 -->
-														
-														<!-- Step 3 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon activestep"><i class="fa fa-clock-o"></i></div>
-															<p>Schedule</p>
-														</div>
-														<!-- Step 3 -->
-														
-														<!-- Step 4 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon"><i class="fa fa-address-card"></i></div>
-															<p>Booking Info</p>
-														</div>
-														<!-- Step 4 -->
-														
-														<!-- Step 5 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon"><i class="fa fa-check"></i></div>
-															<p>Confirm</p>
-														</div>
-														<!-- Step 5 -->
-													</div>
-													
-													<h4>Frequency of Cleaning<span class="mandatory">*</span>:</h4>
-													<div class="form-group validfrequencycleaning">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="frequencycleaning" id="frequencycleaning1" value="Daily">
-																<label for="frequencycleaning1">Daily</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="frequencycleaning" id="frequencycleaning2" value="Weekly">
-																<label for="frequencycleaning2">Weekly</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="frequencycleaning" id="frequencycleaning3" value="Monthly">
-																<label for="frequencycleaning3">Monthly</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="frequencycleaning" id="frequencycleaning4" value="One Time">
-																<label for="frequencycleaning4">One Time</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Preferred Day(s)<span class="mandatory">*</span>:</h4>
-													<div class="form-group validpreferreddays">
-														<ul class="mgsstyle-checkbox mgscheckbox-style list-unstyled">
-															<li><input type="checkbox" name="preferreddays[]" id="preferreddays1" value="Monday" /><label for="preferreddays1">Monday</label></li>
-															<li><input type="checkbox" name="preferreddays[]" id="preferreddays2" value="Tuesday" /><label for="preferreddays2">Tuesday</label></li>
-															<li><input type="checkbox" name="preferreddays[]" id="preferreddays3" value="Wednesday" /><label for="preferreddays3">Wednesday</label></li>
-															<li><input type="checkbox" name="preferreddays[]" id="preferreddays4" value="Thursday" /><label for="preferreddays4">Thursday</label></li>
-															<li><input type="checkbox" name="preferreddays[]" id="preferreddays5" value="Friday" /><label for="preferreddays5">Friday</label></li>
-															<li><input type="checkbox" name="preferreddays[]" id="preferreddays6" value="Saturday" /><label for="preferreddays6">Saturday</label></li>
-															<li><input type="checkbox" name="preferreddays[]" id="preferreddays7" value="Sunday" /><label for="preferreddays7">Sunday</label></li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Preferred Time<span class="mandatory">*</span>:</h4>
-													<div class="form-group validpreferredtime">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="preferredtime" id="preferredtime1" value="Morning">
-																<label for="preferredtime1">Morning</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="preferredtime" id="preferredtime2" value="Afternoon">
-																<label for="preferredtime2">Afternoon</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="preferredtime" id="preferredtime3" value="Evening">
-																<label for="preferredtime3">Evening</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Priority<span class="mandatory">*</span>:</h4>
-													<div class="form-group validpriority">
-														<ul class="radio-inline mgsradio-circle-buttons list-unstyled">
-															<li>
-																<input type="radio" name="priority" id="priority1" value="Low">
-																<label for="priority1">Low</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="priority" id="priority2" value="Medium (within 1 week)">
-																<label for="priority2">Medium (within 1 week)</label>
-																<div class="check"></div>
-															</li>
-															<li>
-																<input type="radio" name="priority" id="priority3" value="Argent (within 3 Dys)">
-																<label for="priority3">Argent (within 3 Dys)</label>
-																<div class="check"></div>
-															</li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<h4>Preferred Date<span class="mandatory">*</span>:</h4>
-													<div id="preferred-date" class="form-group validpreferreddate">
-														<input type="text" class="form-control" name="preferreddate" id="preferreddate" placeholder="mm-dd-yyyy" required data-error="Please Select Preferred Date">
-														<div class="input-group-icon"><i class="fa fa-calendar"></i></div>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<div class="form-group quoteForm-step-3">
-														<button class="btn btn-custom" type="button" onclick="previousStep2()"><span class="fa fa-arrow-left"></span> Back</button> 
-														<button id="nextStepFour" class="btn btn-custom pull-right" type="button" onclick="nextStep4()">Next <span class="fa fa-arrow-right"></span></button>
-													</div><!-- end form-group -->
-													
-												</fieldset>
-											</div><!-- end section -->
-											
-											<div id="section-4" class="section slide-right">
-												<fieldset>
-													<h3 class="section-title">Step 4 of 5</h3>
-													<div class="form-layer-steps form-layer-tolal-steps-5">
-														<div class="form-layer-progress">
-															<div class="form-layer-progress-line" style="width: 70%;"></div>
-														</div>
-														<!-- Step 1 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon"><i class="fa fa-home"></i></div>
-															<p>Property Info</p>
-														</div>
-														<!-- Step 1 -->
-														
-														<!-- Step 2 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon"><i class="fa fa-paint-brush"></i></div>
-															<p>Required Cleaning</p>
-														</div>
-														<!-- Step 2 -->
-														
-														<!-- Step 3 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon"><i class="fa fa-clock-o"></i></div>
-															<p>Schedule</p>
-														</div>
-														<!-- Step 3 -->
-														
-														<!-- Step 4 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon activestep"><i class="fa fa-address-card"></i></div>
-															<p>Booking Info</p>
-														</div>
-														<!-- Step 4 -->
-														
-														<!-- Step 5 -->
-														<div class="form-layer-step">
-															<div class="form-layer-step-icon"><i class="fa fa-check"></i></div>
-															<p>Confirm</p>
-														</div>
-														<!-- Step 5 -->
-													</div>
-													
-													<div class="help-block with-errors mandatory-error"></div>
-													
-													<h4>Provide Requirement Details:</h4>
-													<div class="form-group validreqdetails">
-														<textarea rows="3" name="requirementdetails" id="requirementdetails" placeholder="Provide Requirement Details*" class="form-control" required data-error="Provide Requirement Details"></textarea>
-														<div class="input-group-icon"><i class="fa fa-info-circle"></i></div>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<div class="form-group">
-														<textarea rows="3" name="additionalinfo" id="additionalinfo" placeholder="Additional Info(optional)" class="form-control"></textarea>
-														<div class="input-group-icon"><i class="fa fa-info-circle"></i></div>
-													</div><!-- end form-group -->
-													
-													<h4>Provide Your Identity:</h4>
-													<div class="form-group validfname">
-														<input class="form-control" name="fname" id="fname" type="text" placeholder="First Name*" required data-error="Please enter First Name">
-														<div class="input-group-icon"><i class="fa fa-user"></i></div>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<div class="form-group validlname">
-														<input class="form-control" name="lname" id="lname" type="text" placeholder="Last Name*" required data-error="Please enter Last Name">
-														<div class="input-group-icon"><i class="fa fa-user"></i></div>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<div class="form-group validgender">
-														<select class="form-control" name="gender" id="gender" title="" required data-error="Please Select Gender">
-															<option value="">--- Select Your Gender* ---</option>
-															<option value="Male">Male</option>
-															<option value="Femal">Female</option>
-														</select>
-														<div class="input-group-icon"><i class="fa fa-mars"></i></div>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<div class="form-group validaddress">
-														<input class="form-control" name="address" id="address" type="text" placeholder="Address*" required data-error="Please enter address">
-														<div class="input-group-icon"><i class="fa fa-map-marker"></i></div>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<div class="form-group validemail">
-														<input class="form-control" name="email" id="email" type="email" placeholder="Email*" required data-error="Please enter valid email">
-														<div class="input-group-icon"><i class="fa fa-envelope"></i></div>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<div class="form-group validphone">
-														<input class="form-control" name="phone" id="phone" type="text" placeholder="Phone*" required data-error="Please enter valid phone">
-														<div class="input-group-icon"><i class="fa fa-phone"></i></div>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<div class="form-group validpreferedcontact">
-														<h4>Preferred Contact Method*:</h4>
-														<span class="radio-inline mgsradio-circle-buttons">
-															<input type="radio" name="preferedcontact" id="preferedcontact1" value="email">
-															<label for="preferedcontact1">email</label>
-															<div class="check"></div>
-														</span>
-														<span class="radio-inline mgsradio-circle-buttons">
-															<input type="radio" name="preferedcontact" id="preferedcontact2" value="Phone">
-															<label for="preferedcontact2">Phone</label>
-															<div class="check"></div>
-														</span>
-														<div class="help-block with-errors"></div>
-													</div><!-- end form-group -->
-													
-													<div class="form-group validagree">
-														<ul class="mgsstyle-checkbox mgscheckbox-style list-unstyled">
-															<li><input name="aggre" id="aggre" value="1" type="checkbox"><label for="aggre">Aggre with <a href="javascript:void(0)">Terms &amp; Conditions</a></label></li>
-														</ul>
-														<div class="help-block with-errors"></div>
-													</div>
-													<div class="form-group quoteForm-step-4">
-														<button class="btn btn-custom" type="button" onclick="previousStep3()"><span class="fa fa-arrow-left"></span> Back</button> 
-														<button class="btn btn-custom pull-right" type="button" onclick="nextStep5()">Next <span class="fa fa-arrow-right"></span></button>
-													</div><!-- end form-group -->
-													
-												</fieldset>
-											</div><!-- end section -->
-											
-											<div id="section-5" class="section review-submit-section slide-right">
-												<fieldset>
-													<h3 class="section-title">Step 5 of 5: Review &amp; Submit</h3>
-													<div class="form-layer-steps form-layer-tolal-steps-5">
-														<div class="form-layer-progress">
-															<div class="form-layer-progress-line" style="width: 100%;"></div>
-														</div>
-														<!-- Step 1 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon"><i class="fa fa-home"></i></div>
-															<p>Property Info</p>
-														</div>
-														<!-- Step 1 -->
-														
-														<!-- Step 2 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon"><i class="fa fa-paint-brush"></i></div>
-															<p>Required Cleaning</p>
-														</div>
-														<!-- Step 2 -->
-														
-														<!-- Step 3 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon"><i class="fa fa-clock-o"></i></div>
-															<p>Schedule</p>
-														</div>
-														<!-- Step 3 -->
-														
-														<!-- Step 4 -->
-														<div class="form-layer-step active">
-															<div class="form-layer-step-icon"><i class="fa fa-address-card"></i></div>
-															<p>Booking Info</p>
-														</div>
-														<!-- Step 4 -->
-														
-														<!-- Step 5 -->
-														<div id="lastsection-laststep" class="form-layer-step">
-															<div class="form-layer-step-icon activestep"><i class="fa fa-check"></i></div>
-															<p>Confirm</p>
-														</div>
-														<!-- Step 5 -->
-													</div>
-													
-													<h4>Your Inputed Data Summery:</h4>
-													<div class="row">
-														<div class="columnbottommargin col-md-6 col-sm-12">
-															<h5>Step One</h5>
-															<div class="section-info-box">
-																<p id="servicetypeData"></p>
-																<p id="cleaningtypeData"></p>
-																<p id="propertyaddressData"></p>
-															</div>	
-															
-															<h5>Step Two</h5>
-															<div class="section-info-box">
-																<p id="propertysizetData"></p>
-																<p id="bedroomsData"></p>
-																<p id="bathroomsData"></p>
-																<p id="bathtubsData"></p>
-																<p id="sittingroomData"></p>
-																<p id="diningroomData"></p>
-																<p id="kitchenData"></p>
-																<p id="ovenData"></p>
-																<p id="kitchenitemsData"></p>
-															</div>
-														</div>
-														<div class="columnbottommargin col-md-6 col-sm-12">
-															<h5>Step Three</h5>
-															<div class="section-info-box">
-																<p id="frequencycleaningData"></p>
-																<p id="preferreddaysData"></p>
-																<p id="preferredtimeData"></p>
-																<p id="priorityData"></p>												
-																<p id="preferreddateData"></p>
-															</div>
-															
-															<h5>Step Four</h5>
-															<div class="section-info-box">
-																<p id="requirementdetailsData"></p>
-																<p id="additionalinfoData"></p>
-																<p id="firstNameData"></p>
-																<p id="lastNameData"></p>
-																<p id="genderData"></p>
-																<p id="addressData"></p>												
-																<p id="emailaddressData"></p>												
-																<p id="phoneData"></p>
-																<p id="preferedcontactData"></p>
-															</div>
-														</div>
-														<div class="col-sm-12">
-															<div><strong>Would you like to provide any Attachment (as like Photo)?</strong></div>
-															<div class="form-group attachmentFile">
-																<label class="input-group-btn">
-																	<span class="btn">
-																		Browse&hellip; <input name="userfile" id="userfile" type="file">
-																	</span>
-																</label>
-																<input type="text" id="attachedFile" class="form-control" placeholder="Browse to select file" readonly>
-															</div><!-- end form-group -->
-														</div><!-- end col-sm-12 -->
-														<div class="form-group col-sm-12">
-															<div id="humanCheckCaptchaBox"></div><div id="firstDigit"></div> + <div id="secondDigit"></div> = <input name="humanCheckCaptchaInput" id="humanCheckCaptchaInput" placeholder="" maxlength="3" class="form-control" type="text" required data-error="Please solve Captcha">
-															<div class="help-block with-errors"></div>
-														</div><!-- end form-group -->
-														<div class="col-sm-12">
-															<p id="AggreData"><strong>Aggre with <a href="javascript:void(0)">Terms &amp; Conditions</a></strong> <input name="aggre2" id="aggre2" value="1" checked disabled type="checkbox"></p>
-															
-															<div class="form-group">
-																<ul class="mgsstyle-checkbox mgscheckbox-style list-unstyled">
-																	<li><input name="cookieconsent" id="cookieconsent" type="checkbox" value="1" required data-error="Required Consent"><label for="cookieconsent">I Consent to Collect my data according to the <a href="javascript:void(0)">Privacy Policy</a></label></li>
-																</ul>
-																<div class="help-block with-errors"></div>
-															</div><!-- end form-group -->
-																														
-															<div id="mgsContactSubmit" class="hidden"></div>
-															
-															<div id="processing-image" style="display:none;">
-																<img src="/images/processing-image.gif" alt="Processing" />
-															</div><!-- end processing-image -->
-															<div id="final-step-buttons" class="form-group  quoteForm-step-5">
-																<button class="btn btn-custom" type="button" onclick="previousStep4()"><span class="fa fa-arrow-left"></span> Back</button> 
-																<button id="Submit" class="btn btn-custom pull-right" type="submit">Send Quote Request</button>
-															</div>										
-														</div>									
-													</div>
-												</fieldset>
-											</div><!-- end section -->
-											
-										</div><!-- end section-wrap -->
-									</form>
-								</div><!-- end col-md-6 -->
-								<div class="col-md-4 col-sm-12">
-									<h3 class="section-title">Our Special Services</h3>
-									<div class="row">
-										<div class="col-xs-6">
-											<div class="service-item">
-												<i class="fa fa-paint-brush"></i>
-												<h4>Residential Cleaning</h4>
-											</div>
-										</div>
-										<div class="col-xs-6">
-											<div class="service-item">
-												<i class="fa fa-paint-brush"></i>
-												<h4>Commercial Cleaning</h4>
-											</div>
-										</div>
-										<div class="col-xs-6">
-											<div class="service-item">
-												<i class="fa fa-paint-brush"></i>
-												<h4>Garden Cleaning</h4>
-											</div>
-										</div>
-										<div class="col-xs-6">
-											<div class="service-item">
-												<i class="fa fa-paint-brush"></i>
-												<h4>Kitchen Cleaning</h4>
-											</div>
-										</div>
-									</div>
-								</div><!-- end col-md-6 -->
-							</div><!-- end form-wrap -->
-						</div><!-- end col-sm-12 -->
-					</div><!-- end row -->
-					
-					<div class="row">					
-						<div class="footer-top col-sm-12">
-							<p class="text-center copyright">&copy; 2019 <a href="https://codecanyon.net/user/mgscoder/portfolio?ref=mgscoder" class="footer-site-link">MGScoder</a> All rights reserved. <a href="https://codecanyon.net/item/quotation-booking-multi-step-quotation-booking-request-php-form-for-cleaning-service/21345929?ref=mgscoder" class="footer-site-link">Buy Quotation Booking Form Script</a></p>
-						</div><!-- end col -->
-					</div><!-- end row -->
-					
-				</div><!-- end container -->
-			</div><!-- end display-table-cell -->
-		</div><!-- end display-table -->
-	</div>
+                                                        <!-- Step 2 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-paint-brush"></i></div>
+                                                            <p>Required Cleaning</p>
+                                                        </div>
+                                                        <!-- Step 2 -->
+
+                                                        <!-- Step 3 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-clock-o"></i></div>
+                                                            <p>Schedule</p>
+                                                        </div>
+                                                        <!-- Step 3 -->
+
+                                                        <!-- Step 4 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-address-card"></i></div>
+                                                            <p>Booking Info</p>
+                                                        </div>
+                                                        <!-- Step 4 -->
+
+                                                        <!-- Step 5 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-check"></i></div>
+                                                            <p>Confirm</p>
+                                                        </div>
+                                                        <!-- Step 5 -->
+                                                    </div>
+
+                                                    <div class="help-block with-errors mandatory-error"></div>
+
+                                                    <h4>Select Property Type<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validservicetype">
+                                                        <ul class="mgs-radio mgsimagetyperadio list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="servicetype" id="servicetype1" value="Residential" />
+                                                                <label for="servicetype1"><img src="/images/home.png" alt="Residential" /> Residential</label>
+                                                            </li>
+                                                            <li><input type="radio" name="servicetype" id="servicetype2" value="Commercial" />
+                                                                <label for="servicetype2"><img src="/images/commercial.png" alt="Commercial" /> Commercial</label>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Select Cleaning Type<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validcleaningtype">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="cleaningtype" id="cleaningtype1" value="Shifting Cleaning" required data-error="Please Select Cleaning Type" />
+                                                                <label for="cleaningtype1">Shifting Cleaning</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="cleaningtype" id="cleaningtype2" value="Seasonal Cleaning" required data-error="Please Select Cleaning Type" />
+                                                                <label for="cleaningtype2">Seasonal Cleaning</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Property Address<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validpropertyaddress">
+                                                        <input class="form-control" name="propertyaddress" id="propertyaddress" type="text" placeholder="Property Address*" required data-error="Please enter Property address">
+                                                        <div class="input-group-icon"><i class="fa fa-map-marker"></i></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <div class="form-group quoteForm-step-1">
+                                                        <button class="btn btn-default disable" type="button">Are You ready!</button>
+                                                        <button class="btn btn-custom pull-right" onclick="nextStep2()" type="button">Next <span class="fa fa-arrow-right"></span></button>
+                                                    </div><!-- end form-group -->
+
+                                                </fieldset>
+                                            </div><!-- end section -->
+
+                                            <div id="section-2" class="section slide-right">
+                                                <fieldset>
+                                                    <h3 class="section-title">Step 2 of 5</h3>
+                                                    <div class="form-layer-steps form-layer-tolal-steps-5">
+                                                        <div class="form-layer-progress">
+                                                            <div class="form-layer-progress-line" style="width: 30%;"></div>
+                                                        </div>
+                                                        <!-- Step 1 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-home"></i></div>
+                                                            <p>Property Info</p>
+                                                        </div>
+                                                        <!-- Step 1 -->
+
+                                                        <!-- Step 2 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon activestep"><i class="fa fa-paint-brush"></i></div>
+                                                            <p>Required Cleaning</p>
+                                                        </div>
+                                                        <!-- Step 2 -->
+
+                                                        <!-- Step 3 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-clock-o"></i></div>
+                                                            <p>Schedule</p>
+                                                        </div>
+                                                        <!-- Step 3 -->
+
+                                                        <!-- Step 4 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-address-card"></i></div>
+                                                            <p>Booking Info</p>
+                                                        </div>
+                                                        <!-- Step 4 -->
+
+                                                        <!-- Step 5 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-check"></i></div>
+                                                            <p>Confirm</p>
+                                                        </div>
+                                                        <!-- Step 5 -->
+                                                    </div>
+
+                                                    <h4>ProPerty Size (sq. ft.)<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validpropertysize">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="propertysize" id="propertysize1" value="0-1000" required data-error="Please Select ProPerty Size" />
+                                                                <label for="propertysize1">0-1000</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="propertysize" id="propertysize2" value="1001 - 1500" required data-error="Please Select ProPerty Size" />
+                                                                <label for="propertysize2">1001 - 1500</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="propertysize" id="propertysize3" value="1501 - 2000" required data-error="Please Select ProPerty Size" />
+                                                                <label for="propertysize3">1501 - 2000</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="propertysize" id="propertysize4" value="2001 - 2500" required data-error="Please Select ProPerty Size" />
+                                                                <label for="propertysize4">2001 - 2500</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="propertysize" id="propertysize5" value="2501 - 3000" required data-error="Please Select ProPerty Size" />
+                                                                <label for="propertysize5">2501 - 3000</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="propertysize" id="propertysize6" value="3000+" required data-error="Please Select ProPerty Size" />
+                                                                <label for="propertysize6">3000+</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Bedrooms<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validbedrooms">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="bedrooms" id="bedrooms1" value="1" />
+                                                                <label for="bedrooms1">1</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bedrooms" id="bedrooms2" value="2" />
+                                                                <label for="bedrooms2">2</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bedrooms" id="bedrooms3" value="3" />
+                                                                <label for="bedrooms3">3</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bedrooms" id="bedrooms4" value="4" />
+                                                                <label for="bedrooms4">4</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bedrooms" id="bedrooms5" value="5" />
+                                                                <label for="bedrooms5">5</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bedrooms" id="bedrooms6" value="5+" />
+                                                                <label for="bedrooms6">5+</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Bathrooms<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validbathrooms">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="bathrooms" id="bathrooms1" value="1" />
+                                                                <label for="bathrooms1">1</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bathrooms" id="bathrooms2" value="2" />
+                                                                <label for="bathrooms2">2</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bathrooms" id="bathrooms3" value="3" />
+                                                                <label for="bathrooms3">3</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bathrooms" id="bathrooms4" value="4" />
+                                                                <label for="bathrooms4">4</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bathrooms" id="bathrooms5" value="5" />
+                                                                <label for="bathrooms5">5</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bathrooms" id="bathrooms6" value="5+" />
+                                                                <label for="bathrooms6">5+</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Bath Tubs<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validbathtubs">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="bathtubs" id="bathtubs1" value="Null" />
+                                                                <label for="bathtubs1">Null</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bathtubs" id="bathtubs2" value="1" />
+                                                                <label for="bathtubs2">1</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bathtubs" id="bathtubs3" value="2" />
+                                                                <label for="bathtubs3">2</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bathtubs" id="bathtubs4" value="3" />
+                                                                <label for="bathtubs4">3</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bathtubs" id="bathtubs5" value="4" />
+                                                                <label for="bathtubs5">4</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="bathtubs" id="bathtubs6" value="5" />
+                                                                <label for="bathtubs6">5</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Sitting/Conference Room<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validsittingroom">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="sittingroom" id="sittingroom1" value="Yes">
+                                                                <label for="sittingroom1">Yes</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="sittingroom" id="sittingroom2" value="No">
+                                                                <label for="sittingroom2">No</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Dining Room<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validdiningroom">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="diningroom" id="diningroom1" value="Yes">
+                                                                <label for="diningroom1">Yes</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="diningroom" id="diningroom2" value="No">
+                                                                <label for="diningroom2">No</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Kitchen<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validkitchen">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="kitchen" id="kitchen1" value="Null" required data-error="Please Select Kitchen">
+                                                                <label for="kitchen1">Null</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="kitchen" id="kitchen2" value="1" required data-error="Please Select Kitchen">
+                                                                <label for="kitchen2">1</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="kitchen" id="kitchen3" value="2" required data-error="Please Select Kitchen">
+                                                                <label for="kitchen3">2</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Oven<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validoven">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="oven" id="oven1" value="Null" />
+                                                                <label for="oven1">Null</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="oven" id="oven2" value="1" />
+                                                                <label for="oven2">1</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="oven" id="oven3" value="2" />
+                                                                <label for="oven3">2</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="oven" id="oven4" value="3" />
+                                                                <label for="oven4">3</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="oven" id="oven5" value="4" />
+                                                                <label for="oven5">4</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Kitchen Items<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validkitchenitems">
+                                                        <ul class="mgsstyle-checkbox mgscheckbox-style list-unstyled">
+                                                            <li><input type="checkbox" name="kitchenitems[]" id="kitchenitems1" value="Not Required" /><label for="kitchenitems1">Not Required</label></li>
+                                                            <li><input type="checkbox" name="kitchenitems[]" id="kitchenitems2" value="Refrigerator" /><label for="kitchenitems2">Refrigerator</label></li>
+                                                            <li><input type="checkbox" name="kitchenitems[]" id="kitchenitems3" value="Washing Machine" /><label for="kitchenitems3">Washing Machine</label></li>
+                                                            <li><input type="checkbox" name="kitchenitems[]" id="kitchenitems4" value="Microwave" /><label for="kitchenitems4">Microwave</label></li>
+                                                            <li><input type="checkbox" name="kitchenitems[]" id="kitchenitems5" value="Tumble Dryer" /><label for="kitchenitems5">Tumble Dryer</label></li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+
+                                                    <div class="form-group quoteForm-step-2">
+                                                        <button class="btn btn-custom" type="button" onclick="previousStep1()"><span class="fa fa-arrow-left"></span> Back</button>
+                                                        <button class="btn btn-custom pull-right" type="button" onclick="nextStep3()">Next <span class="fa fa-arrow-right"></span></button>
+                                                    </div><!-- end form-group -->
+
+                                                </fieldset>
+                                            </div><!-- end section -->
+
+                                            <div id="section-3" class="section slide-right">
+                                                <fieldset>
+                                                    <h3 class="section-title">Step 3 of 5</h3>
+                                                    <div class="form-layer-steps form-layer-tolal-steps-5">
+                                                        <div class="form-layer-progress">
+                                                            <div class="form-layer-progress-line" style="width: 50%;"></div>
+                                                        </div>
+                                                        <!-- Step 1 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-home"></i></div>
+                                                            <p>Property Info</p>
+                                                        </div>
+                                                        <!-- Step 1 -->
+
+                                                        <!-- Step 2 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-paint-brush"></i></div>
+                                                            <p>Required Cleaning</p>
+                                                        </div>
+                                                        <!-- Step 2 -->
+
+                                                        <!-- Step 3 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon activestep"><i class="fa fa-clock-o"></i></div>
+                                                            <p>Schedule</p>
+                                                        </div>
+                                                        <!-- Step 3 -->
+
+                                                        <!-- Step 4 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-address-card"></i></div>
+                                                            <p>Booking Info</p>
+                                                        </div>
+                                                        <!-- Step 4 -->
+
+                                                        <!-- Step 5 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-check"></i></div>
+                                                            <p>Confirm</p>
+                                                        </div>
+                                                        <!-- Step 5 -->
+                                                    </div>
+
+                                                    <h4>Frequency of Cleaning<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validfrequencycleaning">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="frequencycleaning" id="frequencycleaning1" value="Daily">
+                                                                <label for="frequencycleaning1">Daily</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="frequencycleaning" id="frequencycleaning2" value="Weekly">
+                                                                <label for="frequencycleaning2">Weekly</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="frequencycleaning" id="frequencycleaning3" value="Monthly">
+                                                                <label for="frequencycleaning3">Monthly</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="frequencycleaning" id="frequencycleaning4" value="One Time">
+                                                                <label for="frequencycleaning4">One Time</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Preferred Day(s)<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validpreferreddays">
+                                                        <ul class="mgsstyle-checkbox mgscheckbox-style list-unstyled">
+                                                            <li><input type="checkbox" name="preferreddays[]" id="preferreddays1" value="Monday" /><label for="preferreddays1">Monday</label></li>
+                                                            <li><input type="checkbox" name="preferreddays[]" id="preferreddays2" value="Tuesday" /><label for="preferreddays2">Tuesday</label></li>
+                                                            <li><input type="checkbox" name="preferreddays[]" id="preferreddays3" value="Wednesday" /><label for="preferreddays3">Wednesday</label></li>
+                                                            <li><input type="checkbox" name="preferreddays[]" id="preferreddays4" value="Thursday" /><label for="preferreddays4">Thursday</label></li>
+                                                            <li><input type="checkbox" name="preferreddays[]" id="preferreddays5" value="Friday" /><label for="preferreddays5">Friday</label></li>
+                                                            <li><input type="checkbox" name="preferreddays[]" id="preferreddays6" value="Saturday" /><label for="preferreddays6">Saturday</label></li>
+                                                            <li><input type="checkbox" name="preferreddays[]" id="preferreddays7" value="Sunday" /><label for="preferreddays7">Sunday</label></li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Preferred Time<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validpreferredtime">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="preferredtime" id="preferredtime1" value="Morning">
+                                                                <label for="preferredtime1">Morning</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="preferredtime" id="preferredtime2" value="Afternoon">
+                                                                <label for="preferredtime2">Afternoon</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="preferredtime" id="preferredtime3" value="Evening">
+                                                                <label for="preferredtime3">Evening</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Priority<span class="mandatory">*</span>:</h4>
+                                                    <div class="form-group validpriority">
+                                                        <ul class="radio-inline mgsradio-circle-buttons list-unstyled">
+                                                            <li>
+                                                                <input type="radio" name="priority" id="priority1" value="Low">
+                                                                <label for="priority1">Low</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="priority" id="priority2" value="Medium (within 1 week)">
+                                                                <label for="priority2">Medium (within 1 week)</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="priority" id="priority3" value="Argent (within 3 Dys)">
+                                                                <label for="priority3">Argent (within 3 Dys)</label>
+                                                                <div class="check"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Preferred Date<span class="mandatory">*</span>:</h4>
+                                                    <div id="preferred-date" class="form-group validpreferreddate">
+                                                        <input type="text" class="form-control" name="preferreddate" id="preferreddate" placeholder="mm-dd-yyyy" required data-error="Please Select Preferred Date">
+                                                        <div class="input-group-icon"><i class="fa fa-calendar"></i></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <div class="form-group quoteForm-step-3">
+                                                        <button class="btn btn-custom" type="button" onclick="previousStep2()"><span class="fa fa-arrow-left"></span> Back</button>
+                                                        <button id="nextStepFour" class="btn btn-custom pull-right" type="button" onclick="nextStep4()">Next <span class="fa fa-arrow-right"></span></button>
+                                                    </div><!-- end form-group -->
+
+                                                </fieldset>
+                                            </div><!-- end section -->
+
+                                            <div id="section-4" class="section slide-right">
+                                                <fieldset>
+                                                    <h3 class="section-title">Step 4 of 5</h3>
+                                                    <div class="form-layer-steps form-layer-tolal-steps-5">
+                                                        <div class="form-layer-progress">
+                                                            <div class="form-layer-progress-line" style="width: 70%;"></div>
+                                                        </div>
+                                                        <!-- Step 1 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-home"></i></div>
+                                                            <p>Property Info</p>
+                                                        </div>
+                                                        <!-- Step 1 -->
+
+                                                        <!-- Step 2 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-paint-brush"></i></div>
+                                                            <p>Required Cleaning</p>
+                                                        </div>
+                                                        <!-- Step 2 -->
+
+                                                        <!-- Step 3 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-clock-o"></i></div>
+                                                            <p>Schedule</p>
+                                                        </div>
+                                                        <!-- Step 3 -->
+
+                                                        <!-- Step 4 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon activestep"><i class="fa fa-address-card"></i></div>
+                                                            <p>Booking Info</p>
+                                                        </div>
+                                                        <!-- Step 4 -->
+
+                                                        <!-- Step 5 -->
+                                                        <div class="form-layer-step">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-check"></i></div>
+                                                            <p>Confirm</p>
+                                                        </div>
+                                                        <!-- Step 5 -->
+                                                    </div>
+
+                                                    <div class="help-block with-errors mandatory-error"></div>
+
+                                                    <h4>Provide Requirement Details:</h4>
+                                                    <div class="form-group validreqdetails">
+                                                        <textarea rows="3" name="requirementdetails" id="requirementdetails" placeholder="Provide Requirement Details*" class="form-control" required data-error="Provide Requirement Details"></textarea>
+                                                        <div class="input-group-icon"><i class="fa fa-info-circle"></i></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <div class="form-group">
+                                                        <textarea rows="3" name="additionalinfo" id="additionalinfo" placeholder="Additional Info(optional)" class="form-control"></textarea>
+                                                        <div class="input-group-icon"><i class="fa fa-info-circle"></i></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <h4>Provide Your Identity:</h4>
+                                                    <div class="form-group validfname">
+                                                        <input class="form-control" name="fname" id="fname" type="text" placeholder="First Name*" required data-error="Please enter First Name">
+                                                        <div class="input-group-icon"><i class="fa fa-user"></i></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <div class="form-group validlname">
+                                                        <input class="form-control" name="lname" id="lname" type="text" placeholder="Last Name*" required data-error="Please enter Last Name">
+                                                        <div class="input-group-icon"><i class="fa fa-user"></i></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <div class="form-group validgender">
+                                                        <select class="form-control" name="gender" id="gender" title="" required data-error="Please Select Gender">
+                                                            <option value="">--- Select Your Gender* ---</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Femal">Female</option>
+                                                        </select>
+                                                        <div class="input-group-icon"><i class="fa fa-mars"></i></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <div class="form-group validaddress">
+                                                        <input class="form-control" name="address" id="address" type="text" placeholder="Address*" required data-error="Please enter address">
+                                                        <div class="input-group-icon"><i class="fa fa-map-marker"></i></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <div class="form-group validemail">
+                                                        <input class="form-control" name="email" id="email" type="email" placeholder="Email*" required data-error="Please enter valid email">
+                                                        <div class="input-group-icon"><i class="fa fa-envelope"></i></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <div class="form-group validphone">
+                                                        <input class="form-control" name="phone" id="phone" type="text" placeholder="Phone*" required data-error="Please enter valid phone">
+                                                        <div class="input-group-icon"><i class="fa fa-phone"></i></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <div class="form-group validpreferedcontact">
+                                                        <h4>Preferred Contact Method*:</h4>
+                                                        <span class="radio-inline mgsradio-circle-buttons">
+                                                            <input type="radio" name="preferedcontact" id="preferedcontact1" value="email">
+                                                            <label for="preferedcontact1">email</label>
+                                                            <div class="check"></div>
+                                                        </span>
+                                                        <span class="radio-inline mgsradio-circle-buttons">
+                                                            <input type="radio" name="preferedcontact" id="preferedcontact2" value="Phone">
+                                                            <label for="preferedcontact2">Phone</label>
+                                                            <div class="check"></div>
+                                                        </span>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div><!-- end form-group -->
+
+                                                    <div class="form-group validagree">
+                                                        <ul class="mgsstyle-checkbox mgscheckbox-style list-unstyled">
+                                                            <li><input name="aggre" id="aggre" value="1" type="checkbox"><label for="aggre">Aggre with <a href="javascript:void(0)">Terms &amp; Conditions</a></label></li>
+                                                        </ul>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                    <div class="form-group quoteForm-step-4">
+                                                        <button class="btn btn-custom" type="button" onclick="previousStep3()"><span class="fa fa-arrow-left"></span> Back</button>
+                                                        <button class="btn btn-custom pull-right" type="button" onclick="nextStep5()">Next <span class="fa fa-arrow-right"></span></button>
+                                                    </div><!-- end form-group -->
+
+                                                </fieldset>
+                                            </div><!-- end section -->
+
+                                            <div id="section-5" class="section review-submit-section slide-right">
+                                                <fieldset>
+                                                    <h3 class="section-title">Step 5 of 5: Review &amp; Submit</h3>
+                                                    <div class="form-layer-steps form-layer-tolal-steps-5">
+                                                        <div class="form-layer-progress">
+                                                            <div class="form-layer-progress-line" style="width: 100%;"></div>
+                                                        </div>
+                                                        <!-- Step 1 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-home"></i></div>
+                                                            <p>Property Info</p>
+                                                        </div>
+                                                        <!-- Step 1 -->
+
+                                                        <!-- Step 2 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-paint-brush"></i></div>
+                                                            <p>Required Cleaning</p>
+                                                        </div>
+                                                        <!-- Step 2 -->
+
+                                                        <!-- Step 3 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-clock-o"></i></div>
+                                                            <p>Schedule</p>
+                                                        </div>
+                                                        <!-- Step 3 -->
+
+                                                        <!-- Step 4 -->
+                                                        <div class="form-layer-step active">
+                                                            <div class="form-layer-step-icon"><i class="fa fa-address-card"></i></div>
+                                                            <p>Booking Info</p>
+                                                        </div>
+                                                        <!-- Step 4 -->
+
+                                                        <!-- Step 5 -->
+                                                        <div id="lastsection-laststep" class="form-layer-step">
+                                                            <div class="form-layer-step-icon activestep"><i class="fa fa-check"></i></div>
+                                                            <p>Confirm</p>
+                                                        </div>
+                                                        <!-- Step 5 -->
+                                                    </div>
+
+                                                    <h4>Your Inputed Data Summery:</h4>
+                                                    <div class="row">
+                                                        <div class="columnbottommargin col-md-6 col-sm-12">
+                                                            <h5>Step One</h5>
+                                                            <div class="section-info-box">
+                                                                <p id="servicetypeData"></p>
+                                                                <p id="cleaningtypeData"></p>
+                                                                <p id="propertyaddressData"></p>
+                                                            </div>
+
+                                                            <h5>Step Two</h5>
+                                                            <div class="section-info-box">
+                                                                <p id="propertysizetData"></p>
+                                                                <p id="bedroomsData"></p>
+                                                                <p id="bathroomsData"></p>
+                                                                <p id="bathtubsData"></p>
+                                                                <p id="sittingroomData"></p>
+                                                                <p id="diningroomData"></p>
+                                                                <p id="kitchenData"></p>
+                                                                <p id="ovenData"></p>
+                                                                <p id="kitchenitemsData"></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="columnbottommargin col-md-6 col-sm-12">
+                                                            <h5>Step Three</h5>
+                                                            <div class="section-info-box">
+                                                                <p id="frequencycleaningData"></p>
+                                                                <p id="preferreddaysData"></p>
+                                                                <p id="preferredtimeData"></p>
+                                                                <p id="priorityData"></p>
+                                                                <p id="preferreddateData"></p>
+                                                            </div>
+
+                                                            <h5>Step Four</h5>
+                                                            <div class="section-info-box">
+                                                                <p id="requirementdetailsData"></p>
+                                                                <p id="additionalinfoData"></p>
+                                                                <p id="firstNameData"></p>
+                                                                <p id="lastNameData"></p>
+                                                                <p id="genderData"></p>
+                                                                <p id="addressData"></p>
+                                                                <p id="emailaddressData"></p>
+                                                                <p id="phoneData"></p>
+                                                                <p id="preferedcontactData"></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div><strong>Would you like to provide any Attachment (as like Photo)?</strong></div>
+                                                            <div class="form-group attachmentFile">
+                                                                <label class="input-group-btn">
+                                                                    <span class="btn">
+                                                                      Browse&hellip; <input name="userfile" id="userfile" type="file">
+                                                                    </span>
+                                                                </label>
+                                                                <input type="text" id="attachedFile" class="form-control" placeholder="Browse to select file" readonly>
+                                                            </div><!-- end form-group -->
+                                                        </div><!-- end col-sm-12 -->
+                                                        <div class="form-group col-sm-12">
+                                                            <div id="humanCheckCaptchaBox"></div><div id="firstDigit"></div> + <div id="secondDigit"></div> = <input name="humanCheckCaptchaInput" id="humanCheckCaptchaInput" placeholder="" maxlength="3" class="form-control" type="text" required data-error="Please solve Captcha">
+                                                            <div class="help-block with-errors"></div>
+                                                        </div><!-- end form-group -->
+                                                        <div class="col-sm-12">
+                                                            <p id="AggreData"><strong>Aggre with <a href="javascript:void(0)">Terms &amp; Conditions</a></strong> <input name="aggre2" id="aggre2" value="1" checked disabled type="checkbox"></p>
+
+                                                            <div class="form-group">
+                                                                <ul class="mgsstyle-checkbox mgscheckbox-style list-unstyled">
+                                                                    <li><input name="cookieconsent" id="cookieconsent" type="checkbox" value="1" required data-error="Required Consent"><label for="cookieconsent">I Consent to Collect my data according to the <a href="javascript:void(0)">Privacy Policy</a></label></li>
+                                                                </ul>
+                                                                <div class="help-block with-errors"></div>
+                                                            </div><!-- end form-group -->
+
+                                                            <div id="mgsContactSubmit" class="hidden"></div>
+
+                                                            <div id="processing-image" style="display:none;">
+                                                                <img src="/images/processing-image.gif" alt="Processing" />
+                                                            </div><!-- end processing-image -->
+                                                            <div id="final-step-buttons" class="form-group  quoteForm-step-5">
+                                                                <button class="btn btn-custom" type="button" onclick="previousStep4()"><span class="fa fa-arrow-left"></span> Back</button>
+                                                                <button id="Submit" class="btn btn-custom pull-right" type="submit">Send Quote Request</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div><!-- end section -->
+
+                                        </div><!-- end section-wrap -->
+                                    {{ form_end(form) }}
+                                </div><!-- end col-md-8 -->
+                                <div class="col-md-4 col-sm-12">
+                                    <h3 class="section-title">Our Special Services</h3>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="service-item">
+                                                <i class="fa fa-paint-brush"></i>
+                                                <h4>Residential Cleaning</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="service-item">
+                                                <i class="fa fa-paint-brush"></i>
+                                                <h4>Commercial Cleaning</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="service-item">
+                                                <i class="fa fa-paint-brush"></i>
+                                                <h4>Garden Cleaning</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="service-item">
+                                                <i class="fa fa-paint-brush"></i>
+                                                <h4>Kitchen Cleaning</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- end col-md-6 -->
+                            </div><!-- end form-wrap -->
+                        </div><!-- end col-sm-12 -->
+                    </div><!-- end row -->
+
+                </div><!-- end container -->
+            </div><!-- end display-table-cell -->
+        </div><!-- end display-table -->
+    </div>
     <!-- content close -->
 {% endblock %}
 
